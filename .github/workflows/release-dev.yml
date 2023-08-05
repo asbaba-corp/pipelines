@@ -1,10 +1,6 @@
 name: Release Dev Workflow
 
-on:
-  pull_request:
-    types: [closed]
-    branches:
-      - main
+on: workflow_call
 
 jobs:
   build:

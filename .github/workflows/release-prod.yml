@@ -1,8 +1,6 @@
 name: Release Workflow
 
-on:
-  release:
-    types: [published]
+on: workflow_call
 
 jobs:
   build:
