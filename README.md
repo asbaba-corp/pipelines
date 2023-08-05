@@ -31,7 +31,7 @@ on:
 
 jobs:
   terraform:
-      uses: "asbaba-corp/pipelines/.github/workflows/terraform-plan.yaml@main"
+      uses: "asbaba-corp/pipelines/.github/workflows/terraform-plan.yml@main"
       with:
         os_version: "ubuntu-20.04"
         working_directory: "./terraform"
