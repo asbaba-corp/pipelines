@@ -8,11 +8,7 @@ jobs:
   build:
     name: Nodejs
     uses: ./.github/workflows/build/build-nodejs.yml
-    with:
-      runs-on: "ubuntu-latest"
   plan:
     needs: [build]
     uses: ./.github/workflows/terraform/terraform-plan.yml
-    with:
-      config_directory: "."
     secrets: inherit
