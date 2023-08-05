@@ -7,8 +7,8 @@ on:
 jobs:
   build:
     name: Nodejs
-    uses: ./.github/workflows/build/build-nodejs.yml
+    uses: ./.github/workflows/build-nodejs.yml
   plan:
     needs: [build]
-    uses: ./.github/workflows/terraform/terraform-plan.yml
+    uses: ./.github/workflows/terraform-plan.yml
     secrets: inherit

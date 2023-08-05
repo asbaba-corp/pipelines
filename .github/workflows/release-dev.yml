@@ -9,16 +9,16 @@ on:
 jobs:
   build:
     name: Nodejs
-    uses: ./.github/workflows/build/build-nodejs.yml
+    uses: ./.github/workflows/build-nodejs.yml
     with:
       runs-on: "ubuntu-latest"
   terraform-plan:
     needs: [build]
-    uses: ./.github/workflows/terraform/terraform-plan.yml
+    uses: ./.github/workflows/terraform-plan.yml
     with:
       config_directory: "/terraform"
     secrets: inherit
   terraform-apply:
     needs: [terraform-plan]
-    uses: ./.github/workflows/terraform/terraform-apply.yml 
+    uses: ./.github/workflows/terraform-apply.yml 
     secrets: inherit
