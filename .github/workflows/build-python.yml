@@ -26,7 +26,7 @@ jobs:
         check-latest: true
 
     - name: Install dependencies
-      run: pip install -r requirements.txt
+      run: pip install -t dist -r requirements.txt
 
     - name: Upload a Build Artifact
       uses: Actions/upload-artifact@v3
