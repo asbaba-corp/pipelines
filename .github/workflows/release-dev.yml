@@ -1,6 +1,11 @@
 name: Release Dev Workflow
 
-on: workflow_call
+on: 
+  workflow_call:
+    inputs:
+      repository_language:
+        type: string
+        required: true
 
 jobs:
   nodejs:
