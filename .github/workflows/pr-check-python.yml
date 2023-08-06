@@ -2,7 +2,10 @@ name: Pull Request Check
 
 on: 
   workflow_call:
-
+    inputs:
+      module:
+        type: string
+        required: true
 
 
 jobs:
@@ -13,3 +16,5 @@ jobs:
     needs: [build]
     uses: ./.github/workflows/terraform-plan.yml
     secrets: inherit
+    with:
+      module: "auth"
