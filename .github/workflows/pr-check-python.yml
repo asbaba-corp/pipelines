@@ -3,7 +3,7 @@ name: Pull Request Check
 on: 
   workflow_call:
   issue_comment:
-    types: [created]
+
 
 
 jobs:
