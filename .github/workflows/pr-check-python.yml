@@ -2,17 +2,14 @@ name: Pull Request Check
 
 on: 
   workflow_call:
-  issue_comment:
 
 
 
 jobs:
   build:
     name: Python
-   # if: ${{ always() || (github.event.issue.pull_request && github.event.issue_comment.comment.body === "/build") }}
     uses: ./.github/workflows/build-python.yml
   plan:
     needs: [build]
-   # if: ${{ always() || (github.event.issue.pull_request && github.event.issue_comment.comment.body === "/plan") }}
     uses: ./.github/workflows/terraform-plan.yml
     secrets: inherit
