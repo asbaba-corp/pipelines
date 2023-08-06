@@ -8,6 +8,7 @@ on:
         required: true
       config_directory:
         type: string
+        required: false
         default: .
 
 jobs:
