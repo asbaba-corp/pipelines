@@ -6,15 +6,15 @@ jobs:
   nodejs:
     name: Nodejs
     uses: ./.github/workflows/build-nodejs.yml
-    if: github.event.inputs.repository_language == 'nodejs'
+    if: inputs.repository_language == 'nodejs'
     
   python:
     name: Python
     uses: ./.github/workflows/build-python.yml
-    if: github.event.inputs.repository_language == 'python'
+    if: inputs.repository_language == 'python'
     
   terraform-plan:
-    needs: ${{ github.event.inputs.repository_language }}
+    needs: ${{ inputs.repository_language }}
     uses: ./.github/workflows/terraform-plan.yml
     with:
       config_directory: "/terraform"
