@@ -1,7 +1,11 @@
 name: Pull Request Check
 
-on: workflow_call
-
+on: 
+  workflow_call:
+    inputs:
+      module:
+        type: string
+        required: true
 
 jobs:
   build:
@@ -10,4 +14,6 @@ jobs:
   plan:
     needs: [build]
     uses: ./.github/workflows/terraform-plan.yml
+    with:
+      module: ${{inputs.module}}
     secrets: inherit
