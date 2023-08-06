@@ -19,7 +19,8 @@ jobs:
     if: inputs.repository_language == 'python'
     
   terraform-plan:
-    needs: ${{ inputs.repository_language }}
+    needs: [nodejs, python]
+    if: ${{ always() }}
     uses: ./.github/workflows/terraform-plan.yml
     with:
       config_directory: "."
