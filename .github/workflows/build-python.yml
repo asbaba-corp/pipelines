@@ -27,7 +27,9 @@ jobs:
 
     - name: Install dependencies
       run: pip install -t dist -r requirements.txt
-
+      
+    - run: tree 
+    
     - name: Upload a Build Artifact
       uses: Actions/upload-artifact@v3
       with:
