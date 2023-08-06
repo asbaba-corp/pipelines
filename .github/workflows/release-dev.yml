@@ -17,7 +17,7 @@ jobs:
     needs: ${{ inputs.repository_language }}
     uses: ./.github/workflows/terraform-plan.yml
     with:
-      config_directory: "/terraform"
+      config_directory: "."
     secrets: inherit
     
   terraform-apply:
