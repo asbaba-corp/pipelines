@@ -1,0 +1,13 @@
+name: Pull Request Check
+
+on: workflow_call
+
+
+jobs:
+  build:
+    name: Python
+    uses: ./.github/workflows/build-python.yml
+  plan:
+    needs: [build]
+    uses: ./.github/workflows/terraform-plan.yml
+    secrets: inherit
