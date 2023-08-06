@@ -3,17 +3,23 @@ name: Release Dev Workflow
 on: workflow_call
 
 jobs:
-  build:
+  nodejs:
     name: Nodejs
     uses: ./.github/workflows/build-nodejs.yml
-    with:
-      runs-on: "ubuntu-latest"
+    if: github.event.inputs.repository_language == 'nodejs'
+    
+  python:
+    name: Python
+    uses: ./.github/workflows/build-python.yml
+    if: github.event.inputs.repository_language == 'python'
+    
   terraform-plan:
-    needs: [build]
+    needs: ${{ github.event.inputs.repository_language }}
     uses: ./.github/workflows/terraform-plan.yml
     with:
       config_directory: "/terraform"
     secrets: inherit
+    
   terraform-apply:
     needs: [terraform-plan]
     uses: ./.github/workflows/terraform-apply.yml 
