@@ -4,6 +4,9 @@ env:
 on:
   workflow_call:
     inputs:
+      config_directory:
+        default: .
+        type: string
       terraform-version:
         default: 1.5.0
         type: string
