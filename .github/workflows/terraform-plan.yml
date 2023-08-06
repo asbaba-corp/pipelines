@@ -10,6 +10,9 @@ on:
       terraform-version:
         default: 1.5.0
         type: string
+      module:
+        type: string
+        required: true
 jobs:
   terraform:
     runs-on: ubuntu-latest
@@ -37,7 +40,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init
+        run: terraform init && terraform workspace new ${{inputs.module}}
                 
       - name: Terraform Validate
         id: validate
