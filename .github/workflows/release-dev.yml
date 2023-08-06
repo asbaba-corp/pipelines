@@ -6,6 +6,9 @@ on:
       repository_language:
         type: string
         required: true
+      config_directory:
+        type: string
+        default: .
 
 jobs:
   nodejs:
@@ -23,7 +26,7 @@ jobs:
     if: ${{ always() }}
     uses: ./.github/workflows/terraform-plan.yml
     with:
-      config_directory: "."
+      config_directory: ${{inputs.config_directory}}
     secrets: inherit
     
   terraform-apply:
