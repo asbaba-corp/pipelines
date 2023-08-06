@@ -17,4 +17,4 @@ jobs:
     uses: ./.github/workflows/terraform-plan.yml
     secrets: inherit
     with:
-      module: "auth"
+      module: ${{inputs.module}}
