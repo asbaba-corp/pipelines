@@ -40,7 +40,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init && terraform workspace new ${{inputs.module}}
+        run: terraform init
                 
       - name: Terraform Validate
         id: validate
