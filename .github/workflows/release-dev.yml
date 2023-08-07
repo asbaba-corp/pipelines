@@ -36,5 +36,6 @@ jobs:
     
   terraform-apply:
     needs: [terraform-plan]
+    if: ${{ always() }}
     uses: ./.github/workflows/terraform-apply.yml 
     secrets: inherit
