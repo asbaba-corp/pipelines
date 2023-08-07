@@ -50,7 +50,7 @@ jobs:
       run: npm run build  --if-present 
            
     - name: Upload a Build Artifact
-      uses: Actions/upload-artifact@v3
+      uses: ./.github/actions/upload-artifact
       with:
         name: build-${{ github.event.number }}
         path: dist
