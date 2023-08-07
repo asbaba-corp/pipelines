@@ -24,8 +24,7 @@ jobs:
       with:
         python-version: ${{ inputs.python-version }}
         cache: 'pip'
-        check-latest: true
-
+        
     - name: Install dependencies
       run: pip install -t dist -r requirements.txt
       
