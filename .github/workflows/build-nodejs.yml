@@ -50,7 +50,7 @@ jobs:
       run: npm run build  --if-present 
            
     - name: Upload a Build Artifact
-      uses: asbaba-corp/pipelines/.github/actions/upload-artifact
+      uses: asbaba-corp/pipelines/.github/actions/upload-artifact@main
       with:
         name: build-${{ github.event.number }}
         path: dist
