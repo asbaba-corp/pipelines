@@ -25,7 +25,7 @@ jobs:
           terraform_version: ${{inputs.terraform-version}}
           
       - name: Download artifact
-        uses: ./.github/actions/download-artifact.yml
+        uses: ./.github/actions/download-artifact
         with:
           name: build-${{ github.event.number }}
           path: dist

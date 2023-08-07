@@ -31,7 +31,7 @@ jobs:
     - run: tree 
     
     - name: Upload a Build Artifact
-      uses: ./.github/actions/upload-artifact.yml
+      uses: ./.github/actions/upload-artifact
       with:
         name: build-${{ github.event.number }}
         path: dist
