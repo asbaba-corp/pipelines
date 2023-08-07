@@ -17,11 +17,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
-      - uses: jwalton/gh-find-current-pr@v1
-        id: findPr
-        with:
-          state: closed
+      
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
@@ -35,7 +31,6 @@ jobs:
           path: dist
          
       - name: Provision infra
-        if: github.event.pull_request.merged == true && success()
         continue-on-error: true
         run: |
           terraform init && terraform apply -input=false -auto-approve -no-color
