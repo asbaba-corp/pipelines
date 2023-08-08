@@ -2,11 +2,6 @@ name: Pull Request Check
 
 on: 
   workflow_call:
-    inputs:
-      module:
-        type: string
-        required: true
-
 
 jobs:
   build:
