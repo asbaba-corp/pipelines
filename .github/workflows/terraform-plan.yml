@@ -10,9 +10,7 @@ on:
       terraform-version:
         default: 1.5.0
         type: string
-      module:
-        type: string
-        required: true
+
 jobs:
   terraform:
     runs-on: ubuntu-latest
