@@ -16,5 +16,3 @@ jobs:
     needs: [build]
     uses: ./.github/workflows/terraform-plan.yml
     secrets: inherit
-    with:
-      module: ${{inputs.module}}
