@@ -28,7 +28,7 @@ jobs:
         uses: asbaba-corp/pipelines/.github/actions/download-artifact@main
         continue-on-error: true
         with:
-          name: build-${{ github.event.number }}}
+          name: build-${{ github.event.number }}
          
       - name: Provision infra
         continue-on-error: true
