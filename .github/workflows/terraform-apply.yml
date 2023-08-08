@@ -26,6 +26,7 @@ jobs:
           
       - name: Download artifact
         uses: asbaba-corp/pipelines/.github/actions/download-artifact@main
+        if: always()
         with:
           name: build-${{ steps.findPr.outputs.pr }}
           path: dist
