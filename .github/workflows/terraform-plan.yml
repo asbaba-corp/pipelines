@@ -27,7 +27,7 @@ jobs:
           
       - name: Download Artifact
         uses: asbaba-corp/pipelines/.github/actions/download-artifact@main
-        if: always()
+        continue-on-error: true
         with:
           name: build-${{ github.event.number }}
           path: dist
