@@ -10,9 +10,6 @@ on:
         type: string
         required: false
         default: .
-      module:
-        type: string
-        required: true
 
 jobs:
   nodejs:
