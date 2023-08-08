@@ -27,12 +27,10 @@ jobs:
         
     - name: Install dependencies
       run: pip install -t dist -r requirements.txt
-    
-    - run: echo ${{ github.event.number }}
-    
+        
     - name: Upload a Build Artifact
       uses: asbaba-corp/pipelines/.github/actions/upload-artifact@main
       with:
         name: build-${{ github.event.number }}
-        path: dist
+        path: dist/python3.10
         if-no-files-found: error
