@@ -31,7 +31,6 @@ jobs:
     uses: ./.github/workflows/terraform-plan.yml
     with:
       config_directory: ${{inputs.config_directory}}
-      module: ${{inputs.module}}
     secrets: inherit
     
   terraform-apply:
