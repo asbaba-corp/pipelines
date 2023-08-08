@@ -27,7 +27,7 @@ jobs:
         
     - name: Install dependencies
       run: pip install -r requirements.txt
-        
+    - run: tree    
     - name: Upload a Build Artifact
       uses: asbaba-corp/pipelines/.github/actions/upload-artifact@main
       with:
