@@ -5,6 +5,7 @@ on:
 
 jobs:
   build:
+    name: Python
     uses: ./.github/workflows/build-python.yml
   plan:
     needs: [build]
