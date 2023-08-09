@@ -29,7 +29,7 @@ jobs:
         continue-on-error: true
         with:
           name: build-${{ github.event.number }}
-          path: dist.zip
+          path: dis
          
       - name: Provision infra
         continue-on-error: true
