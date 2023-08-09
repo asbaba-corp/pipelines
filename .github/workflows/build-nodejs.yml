@@ -25,7 +25,7 @@ jobs:
       with:
         node-version: ${{ inputs.node-version }}
         check-latest: true
-        cache: 'npm'
+        #cache: 'npm'
             
     - name: Install dependencies
       run: npm ci --production --no-optional --legacy-peer-deps
