@@ -23,7 +23,7 @@ jobs:
     if: inputs.repository_language == 'python'
     
   terraform-plan:
-    name: Terraform plan
+    name: Terraform
     needs: [nodejs, python]
     if: ${{ always() }}
     uses: ./.github/workflows/terraform-plan.yml
@@ -32,7 +32,7 @@ jobs:
     secrets: inherit
     
   terraform-apply:
-    name: Terraform apply
+    name: Provision
     needs: [terraform-plan]
     if: ${{ always() }}
     uses: ./.github/workflows/terraform-apply.yml 
