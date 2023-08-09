@@ -34,7 +34,7 @@ jobs:
       run: npm run build  --if-present 
       
     - name: Copy package.json to node folder
-      run: mkdir function/node && cp package.json function/node
+      run: mkdir -p function/node && cp package.json function/node
       
     - run: tree  
     
