@@ -9,8 +9,7 @@ on:
         
 
 jobs:
-  terraform:
-    name: "Apply"
+  apply:
     runs-on: ubuntu-latest
     permissions:
       contents: read
