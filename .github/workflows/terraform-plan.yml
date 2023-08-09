@@ -13,7 +13,7 @@ on:
 
 jobs:
   plan:
-    name: Terraform plan
+    name: Plan
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
