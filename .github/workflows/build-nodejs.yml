@@ -28,7 +28,7 @@ jobs:
         #cache: 'npm'
             
     - name: Install dependencies
-      run: npm ci --production --no-optional --legacy-peer-deps
+      run: npm i --production --no-optional --legacy-peer-deps
       
     - name: Install nest globally
       run: npm i @nestjs/cli -g
