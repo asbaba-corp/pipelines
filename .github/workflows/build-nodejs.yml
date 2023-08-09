@@ -31,7 +31,7 @@ jobs:
       run: npm ci --production --no-optional --legacy-peer-deps
 
     - name: Build
-      run: npx npx @nestjs/cli build  --if-present 
+      run: npx npx @nestjs/cli build  
       
     - name: Copy node_modules to node folder
       run: mkdir -p function/node && cp -r node_modules function/node
