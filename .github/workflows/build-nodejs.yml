@@ -31,7 +31,7 @@ jobs:
       run: npm i --production --no-optional --legacy-peer-deps
       
     - name: Install nest globally
-      run: npm i @nestjs/cli -g
+      run: npm i @nestjs/cli typescript -g
       
     - name: Build
       run: npm run build  
