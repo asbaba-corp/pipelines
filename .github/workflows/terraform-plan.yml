@@ -30,8 +30,10 @@ jobs:
         continue-on-error: true
         with:
           name: build-${{ github.event.number }}
-          path: dist.zip
-      - run: tree    
+          path: dist
+          
+      - run: tree 
+      
       - name: Terraform fmt
         id: fmt
         run: terraform fmt 
