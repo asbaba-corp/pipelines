@@ -29,8 +29,8 @@ jobs:
         continue-on-error: true
         with:
           name: build-${{ github.event.number }}
-          path: dis
-         
+          path: dist
+      - run: tree   
       - name: Provision infra
         continue-on-error: true
         run: |
