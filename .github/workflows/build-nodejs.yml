@@ -37,7 +37,7 @@ jobs:
       run: npm ci --production --no-optional --legacy-peer-deps
 
     - name: Copy node_modules to node folder
-      run: mkdir -p function/nodejs && cp -a node_modules function/nodejs
+      run: mkdir -p function/nodejs/node18 && cp -a node_modules function/nodejs/node18
       
     - run: tree  
     
