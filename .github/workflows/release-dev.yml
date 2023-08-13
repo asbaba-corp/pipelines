@@ -25,7 +25,6 @@ jobs:
   terraform-plan:
     name: Terraform
     needs: [nodejs, python]
-    if: ${{ always() }}
     uses: ./.github/workflows/terraform-plan.yml
     with:
       config_directory: ${{inputs.config_directory}}
@@ -34,6 +33,6 @@ jobs:
   terraform-apply:
     name: Provision
     needs: [terraform-plan]
-    if: ${{ always() }}
+    if: needs.terraform-plan.result == 'success'
     uses: ./.github/workflows/terraform-apply.yml 
     secrets: inherit
