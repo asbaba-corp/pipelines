@@ -36,5 +36,8 @@ jobs:
   terraform-apply:
     name: Provision
     needs: [terraform-plan]
+    if: |
+      always() &&
+      !contains(needs.*.result, 'failure')
     uses: ./.github/workflows/terraform-apply.yml 
     secrets: inherit
