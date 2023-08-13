@@ -48,7 +48,7 @@ jobs:
         run: terraform validate
         
       - name: Post TF Validate Comment
-        if: ${{ always() && (steps.validate.outcome == 'success' || steps.validate.outcome == 'failure') }}
+        if: github.event_name == 'pull_request'
         uses: GetTerminus/terraform-pr-commenter@v3
         with:
           commenter_type: validate
@@ -61,6 +61,7 @@ jobs:
 
       - name: Comment PR  
         uses: GetTerminus/terraform-pr-commenter@v3
+        if: github.event_name == 'pull_request'
         with:
           commenter_type: plan
           commenter_plan_path: tf_plan.txt
