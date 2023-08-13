@@ -36,6 +36,5 @@ jobs:
   terraform-apply:
     name: Provision
     needs: [terraform-plan]
-    if: needs.terraform-plan.result == 'success'
     uses: ./.github/workflows/terraform-apply.yml 
     secrets: inherit
