@@ -21,10 +21,19 @@ jobs:
     name: Python
     uses: ./.github/workflows/build-python.yml
     if: inputs.repository_language == 'python'
+
+  check-success:
+    runs-on: ubuntu-latest
+    needs: [nodejs, python]
+    outputs:
+      success: ${{ (always() && needs.nodejs.result == 'success') || (always() && needs.python.result == 'success') }}
+    steps:
+      - run: echo "Checking success of Node.js or Python job"
     
   terraform-plan:
     name: Terraform
-    needs: [nodejs, python]
+    if: needs.check-success.outputs.success == 'true'
+    needs: [check-success]
     uses: ./.github/workflows/terraform-plan.yml
     with:
       config_directory: ${{inputs.config_directory}}
