@@ -27,8 +27,6 @@ jobs:
     needs: [nodejs, python]
     outputs:
       success: ${{ needs.nodejs.result == 'success' || needs.python.result == 'success' }}
-    steps:
-      - run: echo "Checking success of Node.js or Python job"
     
   terraform-plan:
     name: Terraform
