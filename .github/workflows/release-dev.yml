@@ -35,7 +35,6 @@ jobs:
     
   terraform-plan:
     name: Terraform
-    if: needs.check-success.outputs.success == 'true'
     needs: [check-success]
     uses: ./.github/workflows/terraform-plan.yml
     with:
