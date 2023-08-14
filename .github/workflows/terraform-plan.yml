@@ -58,7 +58,12 @@ jobs:
       - name: Terraform Plan
         id: plan
         run: terraform plan -input=false |& tee tf_plan.txt
-
+        
+      - name: Verify plan status
+        id: check
+        if: failure() 
+        run: exit 1
+        
       - name: Comment PR  
         uses: GetTerminus/terraform-pr-commenter@v3
         if: github.event_name == 'pull_request'
