@@ -33,7 +33,7 @@ jobs:
           name: build-${{ github.event.number }}
           path: dist
           
-      - run: tree 
+      - run: tree -L 2
       
       - name: Terraform fmt
         id: fmt
