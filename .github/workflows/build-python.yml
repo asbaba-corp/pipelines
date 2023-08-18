@@ -28,7 +28,7 @@ jobs:
         
     - name: Install dependencies
       run: pip install -t python -r requirements.txt
-    - run: cp app app/app   
+    - run: cp app app/app  -r 
     
     - run: tree    -L 2
     
