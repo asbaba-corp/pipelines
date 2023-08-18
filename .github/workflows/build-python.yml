@@ -28,7 +28,10 @@ jobs:
         
     - name: Install dependencies
       run: pip install -t python -r requirements.txt
+    - run: cp app app/app   
+    
     - run: tree    -L 2
+    
     - name: Upload a Build Artifact
       uses: asbaba-corp/pipelines/.github/actions/upload-artifact@main
       with:
