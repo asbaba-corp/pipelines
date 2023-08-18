@@ -30,7 +30,7 @@ jobs:
         with:
           name: build-${{ github.event.number }}
           path: dist
-      - run: tree   
+      - run: tree  -L 2 
       - name: Provision infra
         continue-on-error: true
         run: |
