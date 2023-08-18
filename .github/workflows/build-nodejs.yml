@@ -39,7 +39,7 @@ jobs:
     - name: Copy node_modules to node folder
       run: mkdir -p function/nodejs/node18 && cp -a node_modules function/nodejs/node18
       
-    - run: tree  
+    - run: tree  -L 2
     
     - name: Upload a Build Artifact
       uses: asbaba-corp/pipelines/.github/actions/upload-artifact@main
